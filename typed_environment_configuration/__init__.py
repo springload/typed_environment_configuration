@@ -4,6 +4,6 @@
 
 __author__ = """Eugene Dementyev"""
 __email__ = "eugene@springload.co.nz"
-__version__ = "0.1.0"
+__version__ = '0.1.1'
 
 from .typed_environment_configuration import *
