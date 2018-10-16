@@ -6,8 +6,8 @@ Typed Environment Configuration
 .. image:: https://img.shields.io/pypi/v/typed_environment_configuration.svg
         :target: https://pypi.python.org/pypi/typed_environment_configuration
 
-.. image:: https://img.shields.io/travis/ekini/typed_environment_configuration.svg
-        :target: https://travis-ci.org/ekini/typed_environment_configuration
+.. image:: https://img.shields.io/circleci/project/github/springload/typed_environment_configuration.svg
+        :target: https://circleci.com/gh/springload/typed_environment_configuration
 
 .. image:: https://readthedocs.org/projects/typed-environment-configuration/badge/?version=latest
         :target: https://typed-environment-configuration.readthedocs.io/en/latest/?badge=latest
