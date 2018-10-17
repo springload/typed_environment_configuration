@@ -38,8 +38,14 @@ workflows:
   version: 2
   test_and_dist:
     jobs:
-      - test_python2
-      - test_python3
+      - test_python2:
+          filters:
+            tags:
+              only: /.*/
+      - test_python3:
+          filters:
+            tags:
+              only: /.*/
       - dist_release:
           requires:
             - test_python2
