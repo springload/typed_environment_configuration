@@ -46,7 +46,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/ekini/typed_environment_configuration',
+    url='https://github.com/springload/typed_environment_configuration',
     version='0.1.2',
     zip_safe=False,
 )
