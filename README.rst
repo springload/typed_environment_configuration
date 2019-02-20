@@ -18,7 +18,7 @@ Typed Environment Configuration
 
 Environment-based configuration
 
-
+* Converts environmental variables fetched through os.environ to Python-native variables with specified types
 * Free software: MIT license
 * Documentation: https://typed-environment-configuration.readthedocs.io.
 
