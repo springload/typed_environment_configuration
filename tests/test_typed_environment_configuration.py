@@ -9,7 +9,11 @@ import os
 
 from typed_environment_configuration import *
 
-_ENVVARS = [BoolVariable("DEBUG"), StringVariable("DEFAULT_STRING", default="")]
+_ENVVARS = [
+    BoolVariable("DEBUG"),
+    IntegerVariable("INT_VAR"),
+    StringVariable("DEFAULT_STRING", default=""),
+]
 
 _PREFIXED_ENVVARS = [
     StringVariable("PREFIXED_VERSION"),
@@ -18,12 +22,14 @@ _PREFIXED_ENVVARS = [
 
 v = vars()
 
+
 class TestTyped_environment_configuration(unittest.TestCase):
     """Tests for `typed_environment_configuration` package."""
 
     def setUp(self):
         """Set up test fixtures, if any."""
         os.environ["DEBUG"] = "True"
+        os.environ["INT_VAR"] = "10"
         os.environ["PREFIXED_VERSION"] = "1.2.3"
 
         FillVars(_ENVVARS, v)
@@ -35,6 +41,10 @@ class TestTyped_environment_configuration(unittest.TestCase):
     def test_BoolVariable(self):
         """Tests that setting boolean variable in env creates a python variable DEBUG=True"""
         self.assertEqual(DEBUG, True)
+
+    def test_IntegerVariable(self):
+        """Tests that setting integer variable in env creates a python variable NUM_VAR=10"""
+        self.assertEqual(INT_VAR, 10)
 
     def test_PrefixedVariable(self):
         """Tests a prefixed variable"""
