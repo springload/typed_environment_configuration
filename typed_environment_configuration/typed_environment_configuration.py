@@ -73,6 +73,10 @@ class StringVariable(Variable):
     _value_type = typepy.type.String
     _strict_level = 0
 
+class IntegerVariable(Variable):
+    _value_type = typepy.type.Integer
+    _strict_level = 1
+
 
 class StringListVariable(Variable):
     """
