@@ -59,7 +59,7 @@ class StringEnvListVariable(typepy.type.List):
         return typepy.checker.StringTypeChecker(self._data, self._strict_level)
 
     def _create_type_converter(self):
-        return EnvListConverter(self._data)
+        return EnvListConverter(self._data, self._params)
 
 
 class BoolVariable(Variable):
