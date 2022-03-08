@@ -3,22 +3,12 @@ jobs:
   test_python3:
     docker:
       - image: circleci/python:3
-
     steps:
       - checkout
       - run:
           name: test package
           command: make test
 
-  test_python2:
-    docker:
-      - image: circleci/python:2
-
-    steps:
-      - checkout
-      - run:
-          name: test package
-          command: make test
   dist_release:
     docker:
       - image: circleci/python:3
@@ -38,17 +28,12 @@ workflows:
   version: 2
   test_and_dist:
     jobs:
-      - test_python2:
-          filters:
-            tags:
-              only: /.*/
       - test_python3:
           filters:
             tags:
               only: /.*/
       - dist_release:
           requires:
-            - test_python2
             - test_python3
           filters:
             tags:
