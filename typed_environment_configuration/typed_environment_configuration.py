@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from os import getenv
 import typepy
 
@@ -30,7 +28,7 @@ class Variable(object):
 
         try:
             return self._value_type(value, strict_level=self._strict_level).convert()
-        except typepy._error.TypeConversionError:
+        except typepy.error.TypeConversionError:
             raise ValueError(
                 "Can't convert variable '{}' with value '{}' to type '{}'".format(
                     self._real_name, value, repr(self._value_type)
@@ -51,7 +49,7 @@ class EnvListConverter(typepy.converter.ListConverter):
                 (x.strip() for x in (self._value.split(",")) if x and x.strip())
             )
         except (TypeError, ValueError):
-            raise TypeConversionError(
+            raise typepy.error.TypeConversionError(
                 "failed to force_convert to list: type={}".format(type(self._value))
             )
 
