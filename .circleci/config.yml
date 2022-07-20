@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: test package
-          command: make test
+          command: make test-all
 
   dist_release:
     docker:
