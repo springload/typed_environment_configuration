@@ -2,7 +2,7 @@ version: 2
 jobs:
   test_python3:
     docker:
-      - image: circleci/python:3
+      - image: fkrull/multi-python:latest
     steps:
       - checkout
       - run:
