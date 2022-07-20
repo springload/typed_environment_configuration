@@ -5,8 +5,10 @@ History
 0.1.6 (dev)
 ------------------
 * Update history based on git
-* Add python versions 3.6+ to test set
+* Add python versions 3.6-3.9 to test set
+* Remove python 3.4 and 3.5 from test set
 * Update circleci to run tests across all tox versions
+* Move circleci to use a multi-python docker image
 
 0.1.5 (2022-07-11)
 ------------------
